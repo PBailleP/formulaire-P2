@@ -1,0 +1,61 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div style="margin-top: 80px">
+    <form action ="" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="gameName">Nom</label>
+        <input type="text" pattern="^[a-zA-Z-' ]*$" name="gameName"  rows="1" required></input>
+    </div>
+    <div>
+        <label for="dateGame">date de sortie</label>
+        <input type="date"   name="dateGame"  rows="1" required></input>
+    </div>
+    <div>
+        <label for="lienGame">Lien du jeu</label>
+        <input type="text"   name="linkGame"  rows="1" required></input>
+    </div>
+    <div>
+        <label for="popuGame">Popularité du jeu, rentres un nombre au pif pour tester avec le filtre populaire</label>
+        <input type="number"   name="popuGame"  rows="1"></input>
+    </div>
+    <div>
+        <label for="gameOnline">Online?</label>
+        <select name="gameOnline" required>
+            <option value="TRUE">Oui</option>
+            <option value="FALSE">Non</option>
+        </select>
+    </div>
+    <div>
+        <label for="gameSolo">Multi?</label>
+        <select name="gameSolo" required>
+            <option value="TRUE">Oui</option>
+            <option value="FALSE">Non</option>
+        </select>
+    </div>
+    <div>
+        <label for="lastingGame">Durée?</label>
+        <select name="lastingGame" required>
+            <option value="Courte">Courte</option>
+            <option value="Moyenne">Moyenne</option>
+            <option value="Longue">Longue</option>
+        </select>
+    </div>
+    <div>
+        <label for="descriptionGame">Message :</label>
+        <textarea name="descriptionGame"   rows="5" required></textarea>
+    </div>
+    <div>
+        <label for="iconGame">Icone du jeu (carré)</label>
+        <input type="file" name="iconGame">
+    </div>
+    <div>
+        <label for="imageGame">Image du jeu (paysage)</label>
+        <input type="file" name="imageGame">
+    </div>
+    <div>
+        <button type="submit" name="submit" id="envoyer">Envoyer</button>
+    </div>
+    </form>
+</div>
+{% endblock %}
